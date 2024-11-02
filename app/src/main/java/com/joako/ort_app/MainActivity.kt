@@ -2,46 +2,53 @@ package com.joako.ort_app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.activity.viewModels
+import androidx.compose.material3.DrawerValue
+import androidx.compose.material3.rememberDrawerState
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.joako.ort_app.ui.theme.ORTAppTheme
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
+
+    private val viewModel: MainActivityViewModel by viewModels { MainActivityViewModel.Factory }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            ORTAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+            val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+            val drawerOpen by viewModel.drawerShouldBeOpened.collectAsStateWithLifecycle()
+            if (drawerOpen) {
+                LaunchedEffect(Unit) {
+                    try {
+                        drawerState.open()
+                    } finally {
+                        viewModel.resetOpenDrawerAction()
+                    }
                 }
             }
+
+            val scope = rememberCoroutineScope()
+            if (drawerState.isOpen) {
+                BackHandler {
+                    scope.launch {
+                        viewModel.resetOpenDrawerAction()
+                    }
+                }
+            }
+
+            ORTApp(
+                modifier = Modifier,
+                viewModel,
+                drawerState
+            )
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ORTAppTheme {
-        Greeting("Android")
     }
 }
