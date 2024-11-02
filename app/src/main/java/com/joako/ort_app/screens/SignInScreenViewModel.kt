@@ -1,8 +1,7 @@
 package com.joako.ort_app.screens
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.joako.ort_app.data.NetworkResponse
@@ -11,8 +10,8 @@ import com.joako.ort_app.data.SignInModel
 import kotlinx.coroutines.launch
 
 class SignInScreenViewModel : ViewModel() {
+
     companion object {
-        // Check for any static fields or initialization blocks
         val viewModel: SignInScreenViewModel by lazy {
             SignInScreenViewModel()
         }
@@ -23,31 +22,37 @@ class SignInScreenViewModel : ViewModel() {
     }
 
     private val signInApi = RetroFitInstance.api
-    private val _signInResult = MutableLiveData<NetworkResponse<SignInModel>>()
-    val signInResult: LiveData<NetworkResponse<SignInModel>> = _signInResult
+
+    private val _signInResult = mutableStateOf<NetworkResponse<SignInModel>?>(null)
+    val signInResult: NetworkResponse<SignInModel>? get() = _signInResult.value
 
     fun getData(username: String, password: String) {
         viewModelScope.launch {
             try {
                 logMessage("SignInScreen", "Attempting to sign in with username: $username")
-                val response = RetroFitInstance.api.signIn(mapOf("username" to username, "password" to password))
+                val response =
+                    signInApi.signIn(mapOf("username" to username, "password" to password))
                 if (response.isSuccessful) {
                     val responseBody = response.body()
                     if (responseBody != null) {
-                        _signInResult.postValue(NetworkResponse.Success(responseBody))
+                        _signInResult.value = NetworkResponse.Success(responseBody)
                         logMessage("SignInScreen", "Sign in successful: ${responseBody.token}")
                     } else {
-                        _signInResult.postValue(NetworkResponse.Error("Response body is null"))
+                        _signInResult.value = NetworkResponse.Error("Response body is null")
                         logMessage("SignInScreen", "Sign in failed: Response body is null")
                     }
                 } else {
-                    _signInResult.postValue(NetworkResponse.Error("Sign In failed"))
+                    _signInResult.value = NetworkResponse.Error("Sign In failed")
                     logMessage("SignInScreen", "Sign in failed: ${response.errorBody()?.string()}")
                 }
             } catch (e: Exception) {
-                _signInResult.postValue(NetworkResponse.Error(e.message ?: "An error occurred"))
+                _signInResult.value = NetworkResponse.Error(e.message ?: "An error occurred")
                 logMessage("SignInScreen", "Sign in error: ${e.message}")
             }
         }
+    }
+
+    fun clearSignInResult() {
+        _signInResult.value = null
     }
 }
