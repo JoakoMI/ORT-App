@@ -13,20 +13,21 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.compose.rememberNavController
 import com.joako.ort_app.components.BottomBar
+import com.joako.ort_app.screens.SignInScreen
+import com.joako.ort_app.screens.SignInScreenViewModel.Companion.viewModel
 import com.joako.ort_app.screens.miCuenta.MiCuentaScreen
 import com.joako.ort_app.ui.theme.ORTAppTheme
 import com.joako.ortchall4.components.TopBar
 
 @Composable
-fun ORTApp(modifier: Modifier = Modifier, viewModel: MainActivityViewModel = viewModel(factory = MainActivityViewModel.Factory),
+fun ORTApp(modifier: Modifier = Modifier,
+//           viewModel: MainActivityViewModel = viewModel(factory = MainActivityViewModel.Factory),
            drawerState: DrawerState
 ) {
     ORTAppTheme {
 
-        val navController = rememberNavController()
+//        val navController = rememberNavController()
         val scope = rememberCoroutineScope()
         val snackbarHostState = remember { SnackbarHostState() }
 //        val title: String by viewModel.titleBar.observeAsState(stringResource(R.string.title_bar_default))
@@ -34,7 +35,7 @@ fun ORTApp(modifier: Modifier = Modifier, viewModel: MainActivityViewModel = vie
         Scaffold(
             modifier = modifier.fillMaxSize(),
             topBar = {
-                TopBar(title, scope, drawerState, snackbarHostState, viewModel)
+//                TopBar(title, scope, drawerState, snackbarHostState, viewModel)
             },
             bottomBar = {
                 BottomBar()
@@ -42,14 +43,12 @@ fun ORTApp(modifier: Modifier = Modifier, viewModel: MainActivityViewModel = vie
         )
         
         { innerPadding ->
-            MiCuentaScreen(
-                modifier = Modifier.padding(innerPadding),
-                viewModel = viewModel
-            )
-//            Greeting(
-//                name = "Android",
-//                modifier = Modifier.padding(innerPadding)
+//            MiCuentaScreen(
+////                modifier = Modifier.padding(innerPadding),
+////                viewModel = viewModel
 //            )
+            SignInScreen(viewModel = viewModel)
+            Greeting("Joako", modifier = Modifier.padding(innerPadding))
         }
     }
 }
