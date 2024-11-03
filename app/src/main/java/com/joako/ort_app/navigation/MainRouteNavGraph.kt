@@ -3,10 +3,9 @@ package com.joako.ort_app.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.joako.ort_app.MainActivityViewModel
-import com.joako.ort_app.data.RetroFitInstance
+import com.joako.ort_app.data.retrofit.RetroFitInstance
 
 @Composable
 fun MainRouteNavGraph(

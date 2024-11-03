@@ -4,9 +4,9 @@ import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.joako.ort_app.data.NetworkResponse
-import com.joako.ort_app.data.RetroFitInstance
-import com.joako.ort_app.data.SignInModel
+import com.joako.ort_app.data.retrofit.NetworkResponse
+import com.joako.ort_app.data.retrofit.RetroFitInstance
+import com.joako.ort_app.data.retrofit.SignInModel
 import kotlinx.coroutines.launch
 
 class SignInScreenViewModel : ViewModel() {

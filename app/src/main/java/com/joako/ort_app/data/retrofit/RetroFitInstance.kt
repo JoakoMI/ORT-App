@@ -1,4 +1,4 @@
-package com.joako.ort_app.data
+package com.joako.ort_app.data.retrofit
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
