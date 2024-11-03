@@ -1,8 +1,8 @@
 package com.joako.ort_app.data
 
 data class Wallet(
-    val balance: Double,
-    val bank_account: BankAccount,
-    val transactions: Transactions,
-    val user_id: String
+    val user_id: String? = null,
+    val balance: Double? = null,
+    val bank_account: BankAccount? = null,
+    val transactions: Transactions? = null
 )

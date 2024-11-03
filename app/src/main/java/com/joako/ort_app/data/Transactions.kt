@@ -1,6 +1,11 @@
 package com.joako.ort_app.data
 
 data class Transactions(
-    val bank_account_transactions: List<BankAccountTransaction>,
-    val credit_card_transactions: List<CreditCardTransaction>
+    val BankAccountransactionList: List<BankAccountTransaction>? = null,
+    val CreditCardtransactionList: List<CreditCardTransaction>? = null
 )
+
+//data class Transaction(
+//    val id: String = "",s
+//    val amount: Double = 0.0
+//)

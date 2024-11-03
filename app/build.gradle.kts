@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.gms.google-services")  version "4.4.2" apply true
 }
 
 android {
@@ -53,9 +54,6 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.androidx.espresso.core)
-    implementation(libs.androidx.constraintlayout.compose.android)
-    implementation(libs.androidx.material)
-    implementation(libs.androidx.material.android)
     implementation(libs.androidx.ui.text.google.fonts)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.firebase.firestore)
@@ -73,4 +71,8 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.google.services)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics.ktx)
+    implementation(libs.firebase.firestore.ktx)
 }

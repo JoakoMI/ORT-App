@@ -11,19 +11,19 @@ import com.joako.ort_app.data.Wallet
 
 class MiCuentaScreenViewModel : ViewModel() {
 
-    private val _wallet = MutableLiveData<List<Wallet>>()
-    val wallet : LiveData<List<Wallet>> = _wallet
+    private val _wallet = MutableLiveData<List<com.joako.ort_app.data.Wallet>>()
+    val wallet : LiveData<List<com.joako.ort_app.data.Wallet>> = _wallet
 
     private val fireStore = FirebaseFirestore.getInstance()
     private val walletCollection = fireStore.collection("wallet")
 
 
-    fun getWallet() {
+    fun fetchWallet() {
         walletCollection.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                val walletList = ArrayList<Wallet>()
+                val walletList = ArrayList<com.joako.ort_app.data.Wallet>()
                 for (item in task.result) {
-                    val wallets = item.toObject(Wallet::class.java)
+                    val wallets = item.toObject(com.joako.ort_app.data.Wallet::class.java)
                     walletList.add(wallets)
                 }
 

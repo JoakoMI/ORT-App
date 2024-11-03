@@ -13,9 +13,26 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.joako.ort_app.screens.miCuenta.MiCuentaScreen
 import kotlinx.coroutines.launch
 
+//class MainActivity : ComponentActivity() {
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        enableEdgeToEdge()
+//        setContent {
+//            ORTAppTheme {
+//                MiCuentaScreen()
+//                SignInScreen(
+//                    viewModel = SignInScreenViewModel.viewModel
+//                )
+//            }
+//        }
+//    }
+//}
+
 class MainActivity : ComponentActivity() {
+
 
     private val viewModel: MainActivityViewModel by viewModels { MainActivityViewModel.Factory }
 
@@ -43,10 +60,13 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }
+            MiCuentaScreen(
+                modifier = Modifier,
 
+            )
             ORTApp(
                 modifier = Modifier,
-                viewModel,
+                viewModel = viewModel,
                 drawerState
             )
         }

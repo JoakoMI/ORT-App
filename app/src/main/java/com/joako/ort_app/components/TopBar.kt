@@ -19,7 +19,7 @@ fun TopBar(
     scope: CoroutineScope,
     drawerState: DrawerState,
     snackbarHostState: SnackbarHostState,
-    viewModel: MainActivityViewModel
+    viewModel: MainActivityViewModel,
 ) {
     TopBarInternal(
         title = { title.let { Text(it) } },

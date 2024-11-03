@@ -1,10 +1,10 @@
 package com.joako.ort_app.data
 
 data class BankAccountTransaction(
-    val amount: Int,
-    val currency: String,
-    val date: String,
-    val description: String,
-    val transaction_id: String,
-    val type: String
+    val amount: Int? =null,
+    val currency: String? =null,
+    val date: String? =null,
+    val description: String? =null,
+    val transaction_id: String? =null,
+    val type: String? =null
 )

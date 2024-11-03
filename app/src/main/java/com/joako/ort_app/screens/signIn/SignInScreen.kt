@@ -1,4 +1,4 @@
-package com.joako.ort_app.screens
+package com.joako.ort_app.screens.signIn
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
