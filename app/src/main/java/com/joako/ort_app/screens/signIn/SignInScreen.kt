@@ -19,7 +19,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.joako.ort_app.R
-import com.joako.ort_app.data.NetworkResponse
+import com.joako.ort_app.data.retrofit.NetworkResponse
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 

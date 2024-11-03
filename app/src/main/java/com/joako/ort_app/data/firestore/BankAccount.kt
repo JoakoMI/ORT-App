@@ -1,4 +1,4 @@
-package com.joako.ort_app.data
+package com.joako.ort_app.data.firestore
 
 data class BankAccount(
     val bank_name: String? = null,
