@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.joako.ort_app" />
+                  <option name="mobileSdkAppId" value="1:819814521699:android:fc36e1c2e06a76c92c1156" />
+                  <option name="projectId" value="ort-app-64264" />
+                  <option name="projectNumber" value="819814521699" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
