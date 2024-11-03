@@ -1,6 +1,9 @@
 [versions]
 agp = "8.7.2"
-iconsLucide = "1.0.0"
+firebaseCrashlyticsGradle = "3.0.2"
+googleGoogleServices = "4.3.15"
+googleServicesVersion = "4.4.1"
+gradle = "8.1.4"
 kotlin = "2.0.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -11,14 +14,25 @@ activityCompose = "1.9.3"
 composeBom = "2024.04.01"
 retrofit = "2.11.0"
 converterGson = "2.11.0"
+uiTextGoogleFonts = "1.8.0-alpha05"
+lifecycleLivedataKtx = "2.9.0-alpha06"
+firebaseFirestore = "25.1.1"
+foundationLayoutAndroid = "1.6.6"
+navigationCompose = "2.8.3"
 runtimeLivedata = "1.7.5"
-constraintlayoutComposeAndroid = "1.1.0"
-material = "1.8.0-alpha05"
-materialAndroid = "1.7.5"
+googleServices = "4.4.2"
+
+firebaseBom = "32.1.0"
+firebaseAnalyticsKtx = "21.2.0"
+firebaseFirestoreKtx = "25.1.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-icons-lucide = { module = "com.composables:icons-lucide", version.ref = "iconsLucide" }
+firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
+firebase-crashlytics-gradle = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsGradle" }
+google-services-v4315 = { module = "com.google.gms:google-services", version.ref = "googleGoogleServices" }
+google-services-v441 = { module = "com.google.gms:google-services", version.ref = "googleServicesVersion" }
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -34,10 +48,16 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "converterGson" }
+androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+androidx-foundation-layout-android = { group = "androidx.compose.foundation", name = "foundation-layout-android", version.ref = "foundationLayoutAndroid" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtimeLivedata" }
-androidx-constraintlayout-compose-android = { group = "androidx.constraintlayout", name = "constraintlayout-compose-android", version.ref = "constraintlayoutComposeAndroid" }
-androidx-material = { group = "androidx.compose.material", name = "material", version.ref = "material" }
-androidx-material-android = { group = "androidx.compose.material", name = "material-android", version.ref = "materialAndroid" }
+google-services = { group = "com.google.gms", name = "google-services", version.ref = "googleServices" }
+
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
