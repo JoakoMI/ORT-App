@@ -1,1 +1,16 @@
-/build
+#Gradle files
+.gradle/
+build/
+
+#Local configuration files
+.idea/
+*.iml
+
+#Log files
+*.log
+
+#SDK path
+local.properties
+
+#Firestore config file
+google-services.json

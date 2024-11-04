@@ -16,20 +16,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.joako.ort_app.screens.miCuenta.MiCuentaScreen
 import kotlinx.coroutines.launch
 
-//class MainActivity : ComponentActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
-//        setContent {
-//            ORTAppTheme {
-//                MiCuentaScreen()
-//                SignInScreen(
-//                    viewModel = SignInScreenViewModel.viewModel
-//                )
-//            }
-//        }
-//    }
-//}
 
 class MainActivity : ComponentActivity() {
 
