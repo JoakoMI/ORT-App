@@ -17,9 +17,9 @@ import androidx.compose.ui.unit.dp
 import com.joako.ort_app.R
 
 @Composable
-fun ActionButtonsRow() {
+fun ActionButtonsRow(fillMaxWidth: Modifier) {
     Card(
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp),
+        modifier = Modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
         colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFFFF))
     ) {

@@ -15,7 +15,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.font.FontWeight
@@ -118,7 +117,7 @@ fun MiCuentaScreen(
             }
         }
 
-        ActionButtonsRow()
+        ActionButtonsRow(modifier.fillMaxWidth())
         Spacer(modifier = Modifier.height(10.dp))
         Row(
             modifier = Modifier
