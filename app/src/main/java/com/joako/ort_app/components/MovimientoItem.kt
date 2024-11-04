@@ -38,7 +38,7 @@ fun MovimientoItem(transaction: Transaction) {
                 Spacer(modifier = Modifier.weight(1f))
                 Text(
                     text = "$ ${transaction.amount ?: "N/A"}",
-                    color = if (transaction.type == "credit") Color(0xFF00C853) else if (transaction.type == "debit") Color(0xFFD50000) else TODO(),
+                    color = if (transaction.type == "credit") Color(0xFF00C853) else  Color(0xFFD50000),
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Bold
                 )

@@ -6,11 +6,17 @@ import androidx.compose.material3.DrawerState
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.rememberNavController
 import com.joako.ort_app.components.BottomBar
+import com.joako.ort_app.navigation.MainNavActions
+import com.joako.ort_app.navigation.MainRouteNavGraph
 import com.joako.ort_app.screens.miCuenta.MiCuentaScreen
 import com.joako.ort_app.ui.theme.ORTAppTheme
 import com.joako.ortchall4.components.TopBar
@@ -23,29 +29,40 @@ fun ORTApp(
 ) {
     ORTAppTheme {
 
-//        val navController = rememberNavController()
-//        val title: String by viewModel.titleBar.observeAsState(stringResource(R.string.title_bar_default))
-        val scope = rememberCoroutineScope()
+        val navController = rememberNavController()
         val snackbarHostState = remember { SnackbarHostState() }
-        val title = "Mi Cuenta"
+        val scope = rememberCoroutineScope()
+        val title: String by viewModel.titleBar.observeAsState("Inicio")
+
+        val navigationActions = remember(navController) {
+            MainNavActions(navController, scope, drawerState)
+        }
 
         Scaffold(
             modifier = modifier.fillMaxSize(),
-            topBar = {
+
+
+            topBar =
+            {
                 TopBar(title, scope, drawerState, snackbarHostState, viewModel)
             },
+
             bottomBar = {
-                BottomBar()
+                BottomBar(navigationActions, viewModel)
             },
         )
 
         { innerPadding ->
-            MiCuentaScreen(
-                modifier = Modifier.padding(innerPadding)
+            MainRouteNavGraph(
+                modifier = Modifier.padding(innerPadding),
+                navController = navController,
+                viewModel = viewModel,
+                navigationActions = navigationActions,
+                retrofitInstance = viewModel.retrofitInstance,
+//                drawerState = drawerState
             )
 
-
-            }
+        }
     }
 }
 

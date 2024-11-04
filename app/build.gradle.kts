@@ -57,6 +57,7 @@ dependencies {
     implementation(libs.androidx.ui.text.google.fonts)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.firebase.firestore)
+    implementation(libs.androidx.core.splashscreen)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

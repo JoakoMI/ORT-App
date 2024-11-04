@@ -29,11 +29,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.HorizontalDivider
 import com.joako.ort_app.components.ActionButtonsRow
 import com.joako.ort_app.components.MovimientoItem
+import com.joako.ort_app.navigation.MainNavActions
 import com.joako.ort_app.ui.theme.manrope
 
 @Composable
-fun MiCuentaScreen(viewModel: MiCuentaScreenViewModel = viewModel(), modifier: Modifier = Modifier) {
-    viewModel.fetchWallet()
+fun MiCuentaScreen(
+    modifier: Modifier = Modifier,
+    navigationActions: MainNavActions,
+    viewModel: MiCuentaScreenViewModel
+) {    viewModel.fetchWallet()
     val wallet = viewModel.wallet.observeAsState()
 
     Column(
@@ -42,12 +46,6 @@ fun MiCuentaScreen(viewModel: MiCuentaScreenViewModel = viewModel(), modifier: M
             .background(Color(0xFFF3F3F3)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(
-            text = "Mi Cuenta",
-            fontSize = 20.sp,
-            fontWeight = FontWeight.Bold
-        )
-        Spacer(modifier = Modifier.height(10.dp))
 
         val saldoDisponible = wallet.value?.get(0)?.balance ?: "N/A"
         val cvu = wallet.value?.get(0)?.bank_account?.cvu ?: "N/A"

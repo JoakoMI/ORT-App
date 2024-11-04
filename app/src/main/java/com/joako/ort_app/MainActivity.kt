@@ -13,8 +13,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.joako.ort_app.screens.signIn.SignInScreen
-import com.joako.ort_app.screens.signIn.SignInScreenViewModel
+import com.joako.ort_app.screens.miCuenta.MiCuentaScreen
 import kotlinx.coroutines.launch
 
 //class MainActivity : ComponentActivity() {
@@ -61,7 +60,6 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }
-
             ORTApp(
                 modifier = Modifier,
                 viewModel = viewModel,
