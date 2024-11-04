@@ -1,15 +1,27 @@
-# Gradle files
+# Android Studio .idea directory
+.idea/
+
+# Gradle
 .gradle/
 build/
 
+# Application build output
+*.apk
+*.aab
+*.ap_
+
 # Local configuration files
-.idea/
-*.iml
-
-
-#Log files
-*.log
-
-#SDK path
 local.properties
 
+# macOS files
+.DS_Store
+
+# Windows thumbnail cache
+Thumbs.db
+
+# Log files
+*.log
+
+# Keystore files (sensitive information)
+*.keystore
+*.jks

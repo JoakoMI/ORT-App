@@ -11,6 +11,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
@@ -18,7 +19,7 @@ import com.joako.ort_app.components.BottomBar
 import com.joako.ort_app.navigation.MainNavActions
 import com.joako.ort_app.navigation.MainRouteNavGraph
 import com.joako.ort_app.navigation.Routes
-import com.joako.ort_app.screens.inicio.InicioScreen
+import com.joako.ort_app.screens.miCuenta.MiCuentaScreen
 import com.joako.ort_app.ui.theme.ORTAppTheme
 import com.joako.ortchall4.components.TopBar
 
@@ -40,12 +41,11 @@ fun ORTApp(
 
         val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
         val showBars = currentRoute != Routes.SIGNIN_SCREEN
-        val showBottomBar = currentRoute != Routes.INICIO_SCREEN
 
         Scaffold(
             modifier = modifier.fillMaxSize(),
             topBar = {
-                if (showBars && showBottomBar) {
+                if (showBars) {
                     TopBar(title, scope, drawerState, snackbarHostState, viewModel)
                 }
             },
@@ -62,7 +62,6 @@ fun ORTApp(
                 navigationActions = navigationActions,
                 retrofitInstance = viewModel.retrofitInstance,
             )
-
         }
     }
 }

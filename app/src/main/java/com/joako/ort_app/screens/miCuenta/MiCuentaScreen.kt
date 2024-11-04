@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.font.FontWeight
@@ -54,7 +55,6 @@ fun MiCuentaScreen(
             wallet.value?.get(0)?.transactions?.bank_account_transactions ?: emptyList()
         val transactions = creditTCardTransactions + bankAccountTransactions
 
-        Spacer(modifier = Modifier.height(40.dp))
         Card(
             modifier = Modifier.padding(12.dp)
                 .fillMaxWidth()
@@ -67,7 +67,7 @@ fun MiCuentaScreen(
 
         ) {
             Column(
-                modifier = Modifier.padding(16.dp),
+                modifier = Modifier.padding(12.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
@@ -117,8 +117,9 @@ fun MiCuentaScreen(
             }
         }
 
-        ActionButtonsRow(modifier.fillMaxWidth())
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(12.dp))
+        ActionButtonsRow()
+        Spacer(modifier = Modifier.height(24.dp))
         Row(
             modifier = Modifier
                 .fillMaxWidth()

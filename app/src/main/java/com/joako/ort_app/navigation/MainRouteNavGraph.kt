@@ -26,7 +26,7 @@ fun MainRouteNavGraph(
     navController: NavHostController = rememberNavController(),
     viewModel: MainActivityViewModel,
     openDrawer: () -> Unit = {},
-    startDestination: String = Routes.INICIO_SCREEN,
+    startDestination: String = Routes.SIGNIN_SCREEN,
     navigationActions: MainNavActions,
     retrofitInstance: RetroFitInstance
 ) {
@@ -39,11 +39,6 @@ fun MainRouteNavGraph(
         composable(
             route = Routes.SPLASH_SCREEN,
         ) {
-
-//            SplashScreen(
-//                navigationActions = navigationActions,
-//                products = products
-//            )
         }
 
         composable(
@@ -55,9 +50,9 @@ fun MainRouteNavGraph(
 
             SignInScreen(
                 navigationActions = navigationActions,
-                viewModel = signInViewModel
+                viewModel = signInViewModel,
+                navController = navController
             )
-
         }
 
         composable(
