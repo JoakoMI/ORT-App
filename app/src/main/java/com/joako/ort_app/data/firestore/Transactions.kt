@@ -1,11 +1,6 @@
 package com.joako.ort_app.data.firestore
 
 data class Transactions(
-    val BankAccountransactionList: List<BankAccountTransaction>? = null,
-    val CreditCardtransactionList: List<CreditCardTransaction>? = null
+    val credit_card_transactions: List<Transaction> = emptyList(),
+    val bank_account_transactions: List<Transaction> = emptyList()
 )
-
-//data class Transaction(
-//    val id: String = "",s
-//    val amount: Double = 0.0
-//)

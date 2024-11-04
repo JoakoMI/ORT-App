@@ -10,11 +10,19 @@ import kotlinx.coroutines.delay
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.unit.dp
+import com.joako.ort_app.data.retrofit.RetroFitInstance
+import com.joako.ort_app.navigation.MainNavActions
 
 @Composable
-fun MiCuentaScreen(modifier: Modifier = Modifier) {
+fun MiCuentaScreen(
+    modifier: Modifier = Modifier,
+    navigationActions: MainNavActions,
+    viewModel: MiCuentaScreenViewModel
+) {
     val viewModel: MiCuentaScreenViewModel = viewModel(
-        factory = MiCuentaScreenViewModel.provideFactory()
+        factory = MiCuentaScreenViewModel.provideFactory(
+            retrofitInstance = RetroFitInstance
+        )
     )
 
     LaunchedEffect(Unit) {
@@ -34,15 +42,6 @@ fun MiCuentaScreen(modifier: Modifier = Modifier) {
         Text("Currency: " + (wallet.value?.get(0)?.bank_account?.currency.toString()))
 
 
-        Text("Banktransactions:")
-        wallet.value?.get(0)?.transactions?.BankAccountransactionList?.forEachIndexed() { index, element ->
-
-            Text("Transaction: " + index.toString())
-            Text("Amount: " + element.amount.toString())
-            Text("Date: " + element.date.toString())
-            Text("Description: " + element.description.toString())
-            Text("Type: " + element.type.toString())
-        }
 
 
     }

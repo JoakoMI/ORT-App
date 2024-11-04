@@ -21,12 +21,36 @@ fun TopBar(
     snackbarHostState: SnackbarHostState,
     viewModel: MainActivityViewModel,
 ) {
+
     TopBarInternal(
         title = { title.let { Text(it) } },
         onNavIconPressed = { viewModel.openDrawer() },
         scope = scope,
         snackbarHostState = snackbarHostState
     )
+//    when (title) {
+//        "Inicio" -> {
+//            Text(title)
+//        }
+//        "Mi Cuenta" -> {
+//            Text(title)
+//        }
+//        "Mi Tarjeta" -> {
+//            Text(title)
+//        }
+//        "Pago de Servicios" -> {
+//            Text(title)
+//        }
+//        else -> {
+//            TopBarInternal(
+//                title = { title.let { Text(it) } },
+//                onNavIconPressed = { viewModel.openDrawer() },
+//                scope = scope,
+//                snackbarHostState = snackbarHostState
+//            )
+//        }
+//    }
+
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

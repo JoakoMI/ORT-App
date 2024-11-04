@@ -2,4 +2,9 @@
 <resources>
 
     <style name="Theme.ORTApp" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.ORTApp.Splash" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_img</item>
+    </style>
+
 </resources>

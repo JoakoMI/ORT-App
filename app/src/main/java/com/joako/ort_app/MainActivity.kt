@@ -60,10 +60,6 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }
-            MiCuentaScreen(
-                modifier = Modifier,
-
-            )
             ORTApp(
                 modifier = Modifier,
                 viewModel = viewModel,

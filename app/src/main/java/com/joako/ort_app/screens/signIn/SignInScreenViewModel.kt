@@ -11,12 +11,6 @@ import kotlinx.coroutines.launch
 
 class SignInScreenViewModel : ViewModel() {
 
-    companion object {
-        val viewModel: SignInScreenViewModel by lazy {
-            SignInScreenViewModel()
-        }
-    }
-
     fun logMessage(tag: String, message: String) {
         Log.d(tag, message)
     }
@@ -55,4 +49,18 @@ class SignInScreenViewModel : ViewModel() {
     fun clearSignInResult() {
         _signInResult.value = null
     }
+
+    companion object {
+        fun provideFactory(retrofitInstance: RetroFitInstance) = object : androidx.lifecycle.ViewModelProvider.Factory {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                return SignInScreenViewModel() as T
+            }
+        }
+    }
 }
+
+//    companion object {
+//        val viewModel: SignInScreenViewModel by lazy {
+//            SignInScreenViewModel()
+//        }
+//    }
