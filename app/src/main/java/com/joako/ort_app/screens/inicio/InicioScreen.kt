@@ -137,8 +137,8 @@ fun InicioScreen(
         Spacer(modifier = Modifier.height(24.dp))
 
 
-        ActionButtonsRow(modifier.fillMaxWidth())
-        ActionButtonsRow(modifier.fillMaxWidth())
+        ActionButtonsRow()
+        ActionButtonsRow()
     }
 }
 

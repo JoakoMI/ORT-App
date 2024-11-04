@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.joako.ort_app.R
 
 @Composable
-fun ActionButtonsRow(fillMaxWidth: Modifier) {
+fun ActionButtonsRow() {
     Card(
         modifier = Modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
