@@ -34,7 +34,7 @@ fun MovimientoItem(transaction: Transaction) {
         Column {
             Row {
                 Text(text = "$formattedDate   ", fontSize = 14.sp, color = Color(0xFF2A1846))
-                transaction.description?.let { Text(text = it, maxLines = 1, fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Color(0xFF2A1846)) }
+                transaction.description?.let { Text(text = it, fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Color(0xFF2A1846)) }
                 Spacer(modifier = Modifier.weight(1f))
                 Text(
                     text = if (transaction.type == "credit") "+ $${transaction.amount ?: "N/A"}" else "- $${transaction.amount ?: "N/A"}",

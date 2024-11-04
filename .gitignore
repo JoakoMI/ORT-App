@@ -71,3 +71,10 @@ Thumbs.db
 # Firebase files (optional)
 google-services.json
 firebase/
+
+
+# temp files
+.gradle/8.9/executionHistory/
+.gradle/8.9/fileHashes/
+.gradle/buildOutputCleanup/
+.gradle/file-system.probe
