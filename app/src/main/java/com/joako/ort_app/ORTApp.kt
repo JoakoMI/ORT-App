@@ -27,7 +27,7 @@ fun ORTApp(
 //        val title: String by viewModel.titleBar.observeAsState(stringResource(R.string.title_bar_default))
         val scope = rememberCoroutineScope()
         val snackbarHostState = remember { SnackbarHostState() }
-        val title = "Title"
+        val title = "Mi Cuenta"
 
         Scaffold(
             modifier = modifier.fillMaxSize(),
@@ -44,7 +44,8 @@ fun ORTApp(
                 modifier = Modifier.padding(innerPadding)
             )
 
-        }
+
+            }
     }
 }
 
