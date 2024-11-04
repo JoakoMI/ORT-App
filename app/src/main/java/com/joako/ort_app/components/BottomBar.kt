@@ -28,34 +28,21 @@ fun BottomBar(
 
     val space = 20.dp
 
-    BottomAppBar(
+    BottomAppBar (
         modifier = Modifier.padding(0.dp),
         containerColor = Color.White,
     ) {
+
         NavigationBarItem(
             modifier = Modifier.weight(1f),
-            icon = {
-//                if (viewModel.getRoute() == Routes.INICIO_SCREEN) {
-//                    Icon(
-//                        painter = painterResource(R.drawable.home_1),
-//                        contentDescription = "Home",
-//                        tint = Color.Unspecified
-//                    )
-//                } else {
-//                    Icon(
-//                        painter = painterResource(R.drawable.home_1),
-//                        contentDescription = "Home",
-//                        tint = Color.Unspecified
-//                    )
-//                }
 
+            icon = {
                 Icon(
-                    painter = painterResource(R.drawable.home_1),
+                    painter = painterResource(R.drawable.home),
                     contentDescription = "Home",
-                    tint = Color.Unspecified
                 )
             },
-                onClick = { navActions.navigateToInicio },
+            onClick = navActions.navigateToInicio,
             selected = viewModel.getRoute() == Routes.INICIO_SCREEN,
         )
         NavigationBarItem(
@@ -92,9 +79,6 @@ fun BottomBar(
             selected = viewModel.getRoute() == Routes.PAGOSERVICIOS_SCREEN,
         )
 
-//
-//        Este icono abre el Drawer de MiPerfil
-//
         NavigationBarItem(
             modifier = Modifier.weight(1f),
 

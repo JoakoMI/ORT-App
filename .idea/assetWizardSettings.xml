@@ -80,7 +80,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="D:\Documentos\Desktop\splash_img.png" />
+                                                <entry key="imagePath" value="D:\Documentos\Desktop\Tarjeta.png" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -113,7 +113,7 @@
                                   <option name="values">
                                     <map>
                                       <entry key="legacyIconShape" value="CIRCLE" />
-                                      <entry key="outputName" value="splash_img" />
+                                      <entry key="outputName" value="tarjeta_img" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -303,8 +303,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="wallet" />
-                            <entry key="sourceFile" value="D:\svgs\Icono\Icono\Wallet.svg" />
+                            <entry key="outputName" value="arrow_next" />
+                            <entry key="sourceFile" value="D:\Documentos\Desktop\ORT\arrow_next.svg" />
                           </map>
                         </option>
                       </PersistentState>

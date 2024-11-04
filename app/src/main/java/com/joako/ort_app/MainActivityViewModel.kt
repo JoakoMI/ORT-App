@@ -20,6 +20,8 @@ class MainActivityViewModel : ViewModel() {
     private val _drawerShouldBeOpened = MutableStateFlow(false)
     val drawerShouldBeOpened = _drawerShouldBeOpened.asStateFlow()
 
+
+
     fun setRoute(route: Routes) {
         _route.value = route.toString()
     }
