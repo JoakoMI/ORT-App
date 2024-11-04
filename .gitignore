@@ -42,19 +42,11 @@ proguard/
 *.hprof
 .idea/modules.xml
 .idea/.name
-.idea/codeStyles/
-.idea/vcs.xml
-.idea/gradle.xml
-.idea/assetWizardSettings.xml
 .idea/compiler.xml
 .idea/copyright/
 .idea/keymaps/
 .idea/encodings.xml
 .idea/externalDependencies.xml
-
-# Keystore files
-*.jks
-*.keystore
 
 # macOS files
 .DS_Store
