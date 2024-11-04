@@ -3,7 +3,9 @@ package com.joako.ort_app.screens.signIn
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -142,14 +144,26 @@ fun SignInScreen(viewModel: SignInScreenViewModel, navigationActions: MainNavAct
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Checkbox(
-                    checked = rememberMe,
-                    onCheckedChange = { rememberMe = it }
-                )
+                Box(
+                    modifier = Modifier
+                        .size(24.dp)
+                        .background(Color.White, shape = CircleShape)
+                        .border(2.dp, Color.Gray, shape = CircleShape),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Checkbox(
+                        checked = rememberMe,
+                        onCheckedChange = { rememberMe = it },
+                        colors = CheckboxDefaults.colors(
+                            checkmarkColor = Color.Black,
+                            uncheckedColor = Color.Transparent,
+                            checkedColor = Color.Transparent
+                        )
+                    )
+                }
                 Spacer(modifier = Modifier.width(8.dp))
                 Text(text = "Recordar datos de ingreso", fontSize = 14.sp)
             }
-        }
 
         Spacer(modifier = Modifier.height(24.dp))
 
@@ -176,4 +190,5 @@ fun SignInScreen(viewModel: SignInScreenViewModel, navigationActions: MainNavAct
             }
         }
     }
+}
 }
