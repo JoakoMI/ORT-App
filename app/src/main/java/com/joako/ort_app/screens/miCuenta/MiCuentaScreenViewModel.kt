@@ -6,8 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import com.joako.ort_app.data.firestore.Wallet
+import com.joako.ort_app.data.retrofit.RetroFitInstance
 
-class MiCuentaScreenViewModel : ViewModel() {
+class MiCuentaScreenViewModel(retrofitInstance: RetroFitInstance) : ViewModel() {
 
     private val _wallet = MutableLiveData<List<Wallet>>()
     val wallet : LiveData<List<Wallet>> = _wallet
@@ -33,10 +34,15 @@ class MiCuentaScreenViewModel : ViewModel() {
     }
 
     companion object {
-        fun provideFactory(): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
-            override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                return MiCuentaScreenViewModel() as T
+        fun provideFactory(retrofitInstance: RetroFitInstance): ViewModelProvider.Factory =
+            object : ViewModelProvider.Factory {
+                @Suppress("UNCHECKED_CAST")
+                override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                    if (modelClass.isAssignableFrom(MiCuentaScreenViewModel::class.java)) {
+                        return MiCuentaScreenViewModel(retrofitInstance) as T
+                    }
+                    throw IllegalArgumentException("Unknown ViewModel class")
+                }
             }
-        }
     }
 }

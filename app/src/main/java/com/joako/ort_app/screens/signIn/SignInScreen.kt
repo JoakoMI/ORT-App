@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -22,12 +23,13 @@ import com.joako.ort_app.R
 import com.joako.ort_app.data.retrofit.NetworkResponse
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import com.joako.ort_app.navigation.MainNavActions
 
 val goldmanSans = FontFamily(Font(R.font.goldman_sans))
 
 
 @Composable
-fun SignInScreen(viewModel: SignInScreenViewModel) {
+fun SignInScreen(viewModel: SignInScreenViewModel, navigationActions: MainNavActions) {
     val context = LocalContext.current
     val signInResult = viewModel.signInResult
 
@@ -40,7 +42,7 @@ fun SignInScreen(viewModel: SignInScreenViewModel) {
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFF00C58D))
-            .padding(10.dp),
+            .padding(10.dp).background(colorResource(id = R.color.screen_background)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.height(40.dp))
