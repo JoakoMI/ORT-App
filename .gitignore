@@ -1,13 +1,15 @@
-#Gradle files
+# Gradle files
 .gradle/
 build/
 
-#Local configuration files
+# Local configuration files
 .idea/
 *.iml
+
 
 #Log files
 *.log
 
 #SDK path
 local.properties
+
