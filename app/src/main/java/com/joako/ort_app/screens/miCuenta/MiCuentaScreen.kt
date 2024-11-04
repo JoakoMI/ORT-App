@@ -55,7 +55,6 @@ fun MiCuentaScreen(
             wallet.value?.get(0)?.transactions?.bank_account_transactions ?: emptyList()
         val transactions = creditTCardTransactions + bankAccountTransactions
 
-        Spacer(modifier = Modifier.height(40.dp))
         Card(
             modifier = Modifier.padding(12.dp)
                 .fillMaxWidth()
@@ -68,7 +67,7 @@ fun MiCuentaScreen(
 
         ) {
             Column(
-                modifier = Modifier.padding(16.dp),
+                modifier = Modifier.padding(12.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
@@ -118,8 +117,9 @@ fun MiCuentaScreen(
             }
         }
 
+        Spacer(modifier = Modifier.height(12.dp))
         ActionButtonsRow()
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(24.dp))
         Row(
             modifier = Modifier
                 .fillMaxWidth()

@@ -303,8 +303,9 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="wallet" />
-                            <entry key="sourceFile" value="D:\svgs\Icono\Icono\Wallet.svg" />
+                            <entry key="autoMirrored" value="true" />
+                            <entry key="outputName" value="triangle" />
+                            <entry key="sourceFile" value="C:\Users\Usuario\Downloads\triangle.svg" />
                           </map>
                         </option>
                       </PersistentState>
