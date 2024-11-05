@@ -9,6 +9,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.joako.ort_app.MainActivityViewModel
 import com.joako.ort_app.data.retrofit.RetroFitInstance
+import com.joako.ort_app.screens.confirmacionSube.ConfirmacionSubeScreen
+import com.joako.ort_app.screens.confirmacionSube.ConfirmacionSubeScreenViewModel
 import com.joako.ort_app.screens.inicio.InicioScreen
 import com.joako.ort_app.screens.inicio.InicioScreenViewModel
 import com.joako.ort_app.screens.miCuenta.MiCuentaScreen
@@ -17,6 +19,8 @@ import com.joako.ort_app.screens.miTarjeta.MiTarjetaScreen
 import com.joako.ort_app.screens.miTarjeta.MiTarjetaScreenViewModel
 import com.joako.ort_app.screens.pago.PagoServiciosScreen
 import com.joako.ort_app.screens.pago.PagoServiciosScreenViewModel
+import com.joako.ort_app.screens.recargaSube.RecargaSubeScreen
+import com.joako.ort_app.screens.recargaSube.RecargaSubeScreenViewModel
 import com.joako.ort_app.screens.signIn.SignInScreen
 import com.joako.ort_app.screens.signIn.SignInScreenViewModel
 
@@ -108,27 +112,32 @@ fun MainRouteNavGraph(
                 navigationActions = navigationActions,
                 viewModel = pagoServiciosScreenViewModel
             )
-
         }
 
+        composable(
+            route = Routes.RECARGASUBE_SCREEN,
+        ) {
+            val recargaSubeScreenViewModel: RecargaSubeScreenViewModel = viewModel(
+                factory = RecargaSubeScreenViewModel.provideFactory(retrofitInstance)
+            )
+            RecargaSubeScreen(
+                navController = navController,
+                viewModel = recargaSubeScreenViewModel,
+                navActions = navigationActions,
+            )
+        }
 
-
-//        composable(
-//            route = Routes.MAIN_LIST_SCREEN,
-//        ) {
-//            viewModel.setTitleBar(stringResource(R.string.list_title_bar))
-//
-//            val listViewModel: MainListViewModel = viewModel(
-//                factory = MainListViewModel.provideFactory(retrofitInstance)
-//            )
-//
-//            val products by listViewModel.items.observeAsState(emptyList())
-//
-//            MainListScreen(
-//                navigationActions = navigationActions,
-//                products = products
-//            )
-//        }
-
+        composable(
+            route = Routes.CONFIRMACION_SUBE_SCREEN,
+        ) {
+            val confirmacionSubeScreenViewModel: ConfirmacionSubeScreenViewModel = viewModel(
+                factory = ConfirmacionSubeScreenViewModel.provideFactory(retrofitInstance)
+            )
+            ConfirmacionSubeScreen(
+                navController = navController,
+                viewModel = confirmacionSubeScreenViewModel,
+                navActions = navigationActions
+            )
+        }
     }
 }
