@@ -16,9 +16,6 @@ class MainNavActions(
             scope.launch {
                 drawerState.close()
             }
-//            popUpTo(navController.graph.findStartDestination().id) {
-//                saveState = true
-//            }
             launchSingleTop = true
             restoreState = true
         }
@@ -28,9 +25,6 @@ class MainNavActions(
             scope.launch {
                 drawerState.close()
             }
-//            popUpTo(navController.graph.findStartDestination().id) {
-//                saveState = true
-//            }
             launchSingleTop = true
             restoreState = true
         }
@@ -40,9 +34,6 @@ class MainNavActions(
             scope.launch {
                 drawerState.close()
             }
-//            popUpTo(navController.graph.findStartDestination().id) {
-//                saveState = true
-//            }
             launchSingleTop = true
             restoreState = true
         }
@@ -52,9 +43,6 @@ class MainNavActions(
             scope.launch {
                 drawerState.close()
             }
-//            popUpTo(navController.graph.findStartDestination().id) {
-//                saveState = true
-//            }
             launchSingleTop = true
             restoreState = true
         }
@@ -64,12 +52,27 @@ class MainNavActions(
             scope.launch {
                 drawerState.close()
             }
-//            popUpTo(navController.graph.findStartDestination().id) {
-//                saveState = true
-//            }
             launchSingleTop = true
             restoreState = true
         }
     }
 
+    val navigateToRecargaSube: () -> Unit = {
+        navController.navigate(Routes.RECARGASUBE_SCREEN) {
+            scope.launch {
+                drawerState.close()
+            }
+            launchSingleTop = true
+            restoreState = true
+        }
+    }
+    val navigateToConfirmacionSube: () -> Unit = {
+        navController.navigate(Routes.CONFIRMACION_SUBE_SCREEN) {
+            scope.launch {
+                drawerState.close()
+            }
+            launchSingleTop = true
+            restoreState = true
+        }
+    }
 }
