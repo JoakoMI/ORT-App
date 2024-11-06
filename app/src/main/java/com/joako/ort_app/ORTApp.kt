@@ -3,19 +3,25 @@ package com.joako.ort_app
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DrawerState
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.joako.ort_app.components.BottomBar
+import com.joako.ort_app.components.ConfirmacionSubeTopBar
+import com.joako.ort_app.components.RecargaSubeTopBar
 import com.joako.ort_app.navigation.MainNavActions
 import com.joako.ort_app.navigation.MainRouteNavGraph
 import com.joako.ort_app.navigation.Routes
@@ -41,12 +47,22 @@ fun ORTApp(
 
         val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
         val showBars = currentRoute != Routes.SIGNIN_SCREEN
+        val showCustomBar1 = currentRoute == Routes.RECARGASUBE_SCREEN
+        val showCustomBar2 = currentRoute == Routes.CONFIRMACION_SUBE_SCREEN
 
         Scaffold(
             modifier = modifier.fillMaxSize(),
             topBar = {
                 if (showBars) {
-                    TopBar(title, scope, drawerState, snackbarHostState, viewModel)
+                    if (showCustomBar1) {
+                        RecargaSubeTopBar(navController)
+                    }
+                    else if (showCustomBar2) {
+                        ConfirmacionSubeTopBar(navController)
+                    }
+                    else {
+                        TopBar(title, scope, drawerState, snackbarHostState, viewModel)
+                    }
                 }
             },
             bottomBar = {
@@ -65,5 +81,3 @@ fun ORTApp(
         }
     }
 }
-
-
