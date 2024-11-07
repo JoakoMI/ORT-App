@@ -49,6 +49,7 @@ class InicioScreenViewModel(private val retrofitInstance: RetroFitInstance) : Vi
     val lastName: StateFlow<String> get() = _lastName
 
     init {
+        fetchWallet()
         fetchUserName()
     }
 

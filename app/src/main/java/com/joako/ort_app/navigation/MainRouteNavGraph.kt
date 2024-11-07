@@ -136,7 +136,7 @@ fun MainRouteNavGraph(
             )
             ConfirmacionSubeScreen(
                 navController = navController,
-                viewModel = confirmacionSubeScreenViewModel,
+                viewModelConfirmacion = confirmacionSubeScreenViewModel,
                 navActions = navigationActions
             )
         }

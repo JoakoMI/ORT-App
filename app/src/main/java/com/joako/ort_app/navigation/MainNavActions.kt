@@ -58,7 +58,7 @@ class MainNavActions(
         navController.navigate(Routes.RECARGASUBE_SCREEN) {
             scope.launch {
                 drawerState.close()
-                viewModel.setRoute(Routes.RECARGASUBE_SCREEN)
+                viewModel.setRoute(Routes.PAGOSERVICIOS_SCREEN)
             }
             launchSingleTop = true
             restoreState = true
@@ -68,7 +68,7 @@ class MainNavActions(
         navController.navigate(Routes.CONFIRMACION_SUBE_SCREEN) {
             scope.launch {
                 drawerState.close()
-                viewModel.setRoute(Routes.CONFIRMACION_SUBE_SCREEN)
+                viewModel.setRoute(Routes.PAGOSERVICIOS_SCREEN)
             }
             launchSingleTop = true
             restoreState = true
