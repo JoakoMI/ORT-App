@@ -1,7 +1,5 @@
 package com.joako.ort_app
 
-import androidx.compose.material3.DrawerState
-import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,7 +11,6 @@ import com.joako.ort_app.data.retrofit.RetroFitInstance
 import com.joako.ort_app.navigation.Routes
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 
 class MainActivityViewModel : ViewModel() {
 
@@ -26,7 +23,7 @@ class MainActivityViewModel : ViewModel() {
     val drawerShouldBeOpened: StateFlow<Boolean> = _drawerShouldBeOpened
 
 
-    fun setRoute(route: Routes) {
+    fun setRoute(route: String) {
         _route.value = route.toString()
     }
 
