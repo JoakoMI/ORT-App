@@ -32,67 +32,60 @@ import com.joako.ort_app.screens.inicio.InicioScreenViewModel
 
 @Composable
 fun ConfirmacionSubeScreen(
-    navController: NavController, navActions: MainNavActions,
-    viewModelConfirmacion: ConfirmacionSubeScreenViewModel = viewModel(),
-    viewModelInicio: MainActivityViewModel = viewModel()
+    navActions: MainNavActions
 ) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.SpaceBetween,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Spacer(modifier = Modifier.height(40.dp)) // Espacio superior
 
         Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp),
-            verticalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(modifier = Modifier.height(40.dp)) // Espacio superior
+            Icon(
+                painter = painterResource(id = R.drawable.ok_), // Icono de verificación
+                contentDescription = null,
+                tint = Color.Unspecified
+            )
 
-            Column(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ok_), // Icono de verificación
-                    contentDescription = null,
-                    tint = Color.Unspecified
-                )
+            Spacer(modifier = Modifier.height(16.dp))
 
-                Spacer(modifier = Modifier.height(16.dp))
-
-                Text(
-                    text = "Tu operación se ha realizado\ncon éxito",
-                    style = TextStyle(
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = Color(0xFF2A1846),
-                        textAlign = TextAlign.Center
-                    ),
-                    modifier = Modifier.fillMaxWidth()
-                )
-            }
-
-
-            Button(
-                onClick = {
-                    navController.navigate(Routes.INICIO_SCREEN) {
-                        popUpTo(0) { inclusive = true }
-                        viewModelInicio.setRoute(Routes.INICIO_SCREEN)
-                    }
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp)
-                    .height(48.dp),
-                shape = RoundedCornerShape(24.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFF442E83)
-                )
-            ) {
-                Text(
-                    text = "Finalizar",
-                    color = Color.White,
+            Text(
+                text = "Tu operación se ha realizado\ncon éxito",
+                style = TextStyle(
+                    fontSize = 24.sp,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp
-                )
-            }
+                    color = Color(0xFF2A1846),
+                    textAlign = TextAlign.Center
+                ),
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
+
+        Button(
+            onClick = {
+                navActions.navigateToInicio()
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
+                .height(48.dp),
+            shape = RoundedCornerShape(24.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color(0xFF442E83)
+            )
+        ) {
+            Text(
+                text = "Finalizar",
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                fontSize = 16.sp
+            )
         }
     }
+}

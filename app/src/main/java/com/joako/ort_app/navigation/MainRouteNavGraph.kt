@@ -131,12 +131,7 @@ fun MainRouteNavGraph(
         composable(
             route = Routes.CONFIRMACION_SUBE_SCREEN,
         ) {
-            val confirmacionSubeScreenViewModel: ConfirmacionSubeScreenViewModel = viewModel(
-                factory = ConfirmacionSubeScreenViewModel.provideFactory(retrofitInstance)
-            )
             ConfirmacionSubeScreen(
-                navController = navController,
-                viewModelConfirmacion = confirmacionSubeScreenViewModel,
                 navActions = navigationActions
             )
         }
