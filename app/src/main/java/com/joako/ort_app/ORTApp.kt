@@ -11,17 +11,18 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.joako.ort_app.components.BottomBar
+import com.joako.ort_app.components.ConfirmacionSubeTopBar
+import com.joako.ort_app.components.RecargaSubeTopBar
+import com.joako.ort_app.components.drawer.AppDrawer
+import com.joako.ort_app.components.scaffold.BottomBar
 import com.joako.ort_app.navigation.MainNavActions
 import com.joako.ort_app.navigation.MainRouteNavGraph
 import com.joako.ort_app.navigation.Routes
-import com.joako.ort_app.screens.miCuenta.MiCuentaScreen
 import com.joako.ort_app.ui.theme.ORTAppTheme
-import com.joako.ortchall4.components.TopBar
+import com.joako.ort_app.components.scaffold.TopBar
 
 @Composable
 fun ORTApp(
@@ -41,29 +42,40 @@ fun ORTApp(
 
         val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
         val showBars = currentRoute != Routes.SIGNIN_SCREEN
+        val showBottomBar = currentRoute != Routes.INICIO_SCREEN
+        val showTopBar = currentRoute != Routes.RECARGASUBE_SCREEN && currentRoute != Routes.CONFIRMACION_SUBE_SCREEN
 
-        Scaffold(
-            modifier = modifier.fillMaxSize(),
-            topBar = {
-                if (showBars) {
-                    TopBar(title, scope, drawerState, snackbarHostState, viewModel)
-                }
-            },
-            bottomBar = {
-                if (showBars) {
-                    BottomBar(navigationActions, viewModel)
-                }
-            },
-        ) { innerPadding ->
-            MainRouteNavGraph(
-                modifier = Modifier.padding(innerPadding),
-                navController = navController,
-                viewModel = viewModel,
-                navigationActions = navigationActions,
-                retrofitInstance = viewModel.retrofitInstance,
-            )
+        AppDrawer(
+            drawerState = drawerState,
+            navigationActions
+        ) {
+            Scaffold(
+                modifier = modifier.fillMaxSize(),
+                topBar = {
+                    if (showBars && showBottomBar) {
+                        when (currentRoute) {
+                            Routes.RECARGASUBE_SCREEN -> RecargaSubeTopBar(navController)
+                            Routes.CONFIRMACION_SUBE_SCREEN -> ConfirmacionSubeTopBar(navController)
+                            else -> TopBar(title, scope, drawerState, viewModel)
+                        }
+
+                    }
+                },
+                bottomBar = {
+                    if (showBars) {
+                        BottomBar(navigationActions, viewModel)
+                    }
+                },
+            ) { innerPadding ->
+                MainRouteNavGraph(
+                    modifier = Modifier.padding(innerPadding),
+                    navController = navController,
+                    viewModel = viewModel,
+                    navigationActions = navigationActions,
+                    retrofitInstance = viewModel.retrofitInstance,
+                )
+            }
         }
     }
 }
-
 
