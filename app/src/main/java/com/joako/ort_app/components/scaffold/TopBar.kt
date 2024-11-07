@@ -1,10 +1,9 @@
-package com.joako.ortchall4.components
+package com.joako.ort_app.components.scaffold
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
@@ -18,7 +17,6 @@ fun TopBar(
     title: String,
     scope: CoroutineScope,
     drawerState: DrawerState,
-    snackbarHostState: SnackbarHostState,
     viewModel: MainActivityViewModel,
 ) {
 
@@ -26,30 +24,7 @@ fun TopBar(
         title = { title.let { Text(it) } },
         onNavIconPressed = { viewModel.openDrawer() },
         scope = scope,
-        snackbarHostState = snackbarHostState
     )
-//    when (title) {
-//        "Inicio" -> {
-//            Text(title)
-//        }
-//        "Mi Cuenta" -> {
-//            Text(title)
-//        }
-//        "Mi Tarjeta" -> {
-//            Text(title)
-//        }
-//        "Pago de Servicios" -> {
-//            Text(title)
-//        }
-//        else -> {
-//            TopBarInternal(
-//                title = { title.let { Text(it) } },
-//                onNavIconPressed = { viewModel.openDrawer() },
-//                scope = scope,
-//                snackbarHostState = snackbarHostState
-//            )
-//        }
-//    }
 
 }
 
@@ -62,22 +37,11 @@ fun TopBarInternal(
     title: @Composable () -> Unit,
     actions: @Composable RowScope.() -> Unit = {},
     scope: CoroutineScope,
-    snackbarHostState: SnackbarHostState
 ) {
     CenterAlignedTopAppBar(
         modifier = modifier,
         title = title,
-//        actions = {
-//            Icon(
-//                painter = painterResource(id = R.drawable.trailing_icon),
-//                contentDescription = null,
-//                modifier = Modifier.padding(10.dp).size(36.dp).clickable {
-//                    scope.launch {
-//                        snackbarHostState.showSnackbar("Avatar")
-//                    }
-//                }
-//            )
-//        },
+
 
 //        scrollBehavior = scrollBehavior,
 //        navigationIcon = {

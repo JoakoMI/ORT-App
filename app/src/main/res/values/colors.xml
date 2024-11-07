@@ -6,11 +6,13 @@
     <color name="purple_900">#442E83</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#2A1846</color>
     <color name="white">#FFFFFFFF</color>
 
 <!--  Wainimovil  -->
     <color name="screen_background">#F8F8F6</color>
     <color name="icons_selected">#0FD08B</color>
     <color name="box_notifier">#F96440</color>
+    <color name="gray_500">#D1D1D7</color>
+    <color name="green_800">#0FD08B</color>
 </resources>

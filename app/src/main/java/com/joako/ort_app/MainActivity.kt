@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
@@ -19,7 +20,6 @@ import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
 
-
     private val viewModel: MainActivityViewModel by viewModels { MainActivityViewModel.Factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,29 +27,30 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
-            val drawerOpen by viewModel.drawerShouldBeOpened.collectAsStateWithLifecycle()
-            if (drawerOpen) {
-                LaunchedEffect(Unit) {
-                    try {
+            val drawerOpen by viewModel.drawerShouldBeOpened.collectAsState()
+            val scope = rememberCoroutineScope()
+
+            LaunchedEffect(drawerOpen) {
+                if (drawerOpen) {
+                    scope.launch {
                         drawerState.open()
-                    } finally {
                         viewModel.resetOpenDrawerAction()
                     }
                 }
             }
 
-            val scope = rememberCoroutineScope()
             if (drawerState.isOpen) {
                 BackHandler {
                     scope.launch {
+                        drawerState.close()
                         viewModel.resetOpenDrawerAction()
                     }
                 }
             }
+
             ORTApp(
-                modifier = Modifier,
                 viewModel = viewModel,
-                drawerState
+                drawerState = drawerState
             )
         }
     }
