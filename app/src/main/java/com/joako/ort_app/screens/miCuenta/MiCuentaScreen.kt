@@ -1,17 +1,22 @@
 package com.joako.ort_app.screens.miCuenta
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
+import com.joako.ort_app.R
 import com.joako.ort_app.components.MiCuentaButtonRow
 import com.joako.ort_app.components.MiCuentaMovimientos
 import com.joako.ort_app.components.MiCuentaSaldoCard
@@ -22,13 +27,15 @@ fun MiCuentaScreen(
     modifier: Modifier = Modifier,
     navigationActions: MainNavActions,
     viewModel: MiCuentaScreenViewModel
-) {    viewModel.fetchWallet()
+) {
+    viewModel.fetchWallet()
     val wallet = viewModel.wallet.observeAsState()
+
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFF3F3F3)),
+            .background(colorResource(id = R.color.screen_background)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
@@ -53,6 +60,8 @@ fun MiCuentaScreen(
         Spacer(modifier = Modifier.height(24.dp))
 
         MiCuentaMovimientos(transactions = transactions)
+
+
 
     }
 }

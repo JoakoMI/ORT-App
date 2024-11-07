@@ -2,10 +2,13 @@ package com.joako.ort_app.screens.inicio
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,29 +29,38 @@ fun InicioScreen(
     navigationActions: MainNavActions,
     viewModel: InicioScreenViewModel,
 ) {
-    Column(
-        modifier = modifier
+    Box(
+        modifier = Modifier
             .fillMaxSize()
-            .background(colorResource(id = R.color.screen_background)),
+            .background(colorResource(id = R.color.screen_background))
+            .verticalScroll(rememberScrollState())
     ) {
-        InicioGreeting(modifier = modifier, viewModel = viewModel)
-
         Column(
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = modifier
+                .fillMaxSize()
+                .background(colorResource(id = R.color.screen_background)),
         ) {
-            CardMock()
+            InicioGreeting(modifier = modifier, viewModel = viewModel)
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Column(
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                CardMock()
 
-            VisibilityOption()
+                Spacer(modifier = Modifier.weight(1f))
 
-            InicioSaldoView(viewModel = viewModel)
+                VisibilityOption()
 
-            InicioAlert()
+                InicioSaldoView(viewModel = viewModel)
+
+                InicioAlert()
+            }
+            Spacer(modifier = Modifier.weight(1f))
+
+            InicioButtonRow(modifier = modifier, navigationActions = navigationActions)
+
+            Spacer(modifier = Modifier.weight(1f))
         }
-        Spacer(modifier = Modifier.height(24.dp))
-
-        InicioButtonRow(modifier = modifier, navigationActions = navigationActions)
     }
 }

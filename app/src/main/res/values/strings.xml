@@ -1,4 +1,63 @@
 <resources>
     <string name="app_name">ORT-App</string>
     <string name="title_bar_default">Inicio</string>
+
+    --------Inicio
+    <string name="accsess">Ultimo acceso: Mar 01, 2020 4:55 PM</string>
+    <string name="greeting">👋 Hola </string>
+    <string name="visibility"> Mostrar datos</string>
+    <string name="available">SALDO DISPONIBLE</string>
+    <string name="alert_message">La cuota de tu préstamo está próxima a vencer.</string>
+    <string name="alert_link">Ver préstamo</string>
+
+    --------Buttons
+    <string name="sube_1">RECARGA</string>
+    <string name="sube_2">SUBE</string>
+
+    <string name="celular_1">RECARGA</string>
+    <string name="celular_2">CELULAR</string>
+
+    <string name="servicio_1">PAGAR</string>
+    <string name="servicio_2">SERVICIO</string>
+
+    <string name="cargar">CARGAR</string>
+    <string name="extraer">EXTRAER</string>
+    <string name="transferir">TRANSFERIR</string>
+    <string name="dinero">DINERO</string>
+
+-----------
+    <string name="signin_phrase_1">UNA BILLETERA</string>
+    <string name="signin_phrase_2">SIMPLE PARA VOS.</string>
+
+    <string name="signin_account">Ingresá a tu cuenta:</string>
+    <string name="signin_account_label">"DNI o E-mail"</string>
+    <string name="signin_pass">"Contraseña"</string>
+    <string name="signin_pass_recover">"Olvidé mi contraseña"</string>
+    <string name="signin_pass_remember">"Recordar datos de ingreso"</string>
+
+    <string name="cvu">CVU: </string>
+    <string name="movimientos">MOVIMIENTOS</string>
+
+    <string name="tarjeta_virtual">TARJETA VIRTUAL</string>
+    <string name="tarjeta_fisica">TARJETA FISICA</string>
+    <string name="promo">\uD83D\uDCA1 ¿Sabías que poder pedir una tarjeta Mastercard física para utilizar directamente en los negocios que vos elijas?</string>
+    <string name="menu_item_quiero">Quiero mi tarjeta física</string>
+    <string name="menu_item_tengo">Ya tengo mi tarjeta física</string>
+    <string name="menu_item_activa">Activá tu tarjeta para comenzar a usarla</string>
+
+    <string name="mi_perfil">Mi Perfil</string>
+    <string name="mis_datos">Mis datos</string>
+    <string name="mi_cvu">Mi CVU</string>
+    <string name="config">Configuración</string>
+    <string name="help">Ayuda</string>
+    <string name="terms">Términos y condiciones</string>
+    <string name="close">Cerrar sesión</string>
+
+
+    <string name="dark_on">Dark Mode ON</string>
+    <string name="dark_off">Dark Mode OFF</string>
+
+
+
 </resources>
+
