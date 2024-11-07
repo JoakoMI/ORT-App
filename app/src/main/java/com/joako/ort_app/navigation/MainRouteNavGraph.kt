@@ -30,7 +30,7 @@ fun MainRouteNavGraph(
     navController: NavHostController = rememberNavController(),
     viewModel: MainActivityViewModel,
     openDrawer: () -> Unit = {},
-    startDestination: String = Routes.SIGNIN_SCREEN,
+    startDestination: String = Routes.INICIO_SCREEN,
     navigationActions: MainNavActions,
     retrofitInstance: RetroFitInstance
 ) {

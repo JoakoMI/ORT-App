@@ -14,8 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.joako.ort_app.components.ConfirmacionSubeTopBar
-import com.joako.ort_app.components.RecargaSubeTopBar
+import com.joako.ort_app.components.scaffold.ConfirmacionSubeTopBar
+import com.joako.ort_app.components.scaffold.RecargaSubeTopBar
 import com.joako.ort_app.components.drawer.AppDrawer
 import com.joako.ort_app.components.scaffold.BottomBar
 import com.joako.ort_app.navigation.MainNavActions

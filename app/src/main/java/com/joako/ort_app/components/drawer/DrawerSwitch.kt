@@ -61,8 +61,8 @@ fun DrawerSwitch(modifier: Modifier = Modifier) {
                 checked = isChecked,
                 onCheckedChange = { isChecked = it },
                 colors = SwitchDefaults.colors(
-                    checkedTrackColor = androidx.compose.ui.graphics.Color.Gray,
-                    checkedThumbColor = androidx.compose.ui.graphics.Color.Green,
+                    checkedTrackColor = androidx.compose.ui.graphics.Color.LightGray,
+                    checkedThumbColor = colorResource(id = R.color.icons_selected),
                     uncheckedBorderColor = androidx.compose.ui.graphics.Color.White,
                     uncheckedThumbColor = androidx.compose.ui.graphics.Color.White,
                     uncheckedTrackColor = androidx.compose.ui.graphics.Color.LightGray

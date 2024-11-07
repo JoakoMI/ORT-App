@@ -11,7 +11,9 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
+import com.joako.ort_app.R
 import com.joako.ort_app.components.MiCuentaButtonRow
 import com.joako.ort_app.components.MiCuentaMovimientos
 import com.joako.ort_app.components.MiCuentaSaldoCard
@@ -28,7 +30,7 @@ fun MiCuentaScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFF3F3F3)),
+            .background(colorResource(id = R.color.screen_background)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 

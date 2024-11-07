@@ -12,7 +12,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
+import com.joako.ort_app.R
 import com.joako.ort_app.components.OptionCard
 import com.joako.ort_app.components.OptionCardRow
 import com.joako.ort_app.navigation.MainNavActions
@@ -28,11 +30,11 @@ fun PagoServiciosScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .background(colorResource(id = R.color.screen_background)),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Column {
+        Column (modifier.padding(12.dp)){
             options.chunked(2).forEach { rowOptions ->
                 OptionCardRow(
                     options = rowOptions,

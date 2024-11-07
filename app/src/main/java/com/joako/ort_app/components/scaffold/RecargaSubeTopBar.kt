@@ -1,4 +1,4 @@
-package com.joako.ort_app.components
+package com.joako.ort_app.components.scaffold
 
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable

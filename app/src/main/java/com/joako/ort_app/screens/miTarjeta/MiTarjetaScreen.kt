@@ -1,4 +1,3 @@
-
 package com.joako.ort_app.screens.miTarjeta
 
 import androidx.compose.foundation.BorderStroke
@@ -43,7 +42,6 @@ fun MiTarjetaScreen(
 
     Column(
         modifier = modifier
-            .padding(horizontal = 12.dp)
             .fillMaxSize()
             .background(colorResource(id = R.color.screen_background)),
     ) {
@@ -74,6 +72,7 @@ fun MiTarjetaScreen(
                 color = colorResource(id = R.color.gray_500)
             )
 
+            Column (modifier.padding(12.dp)){
             Text(
                 "\uD83D\uDCA1 ¿Sabías que poder pedir una tarjeta Mastercard física para utilizar directamente en los negocios que vos elijas?",
                 style = TextStyle(
@@ -82,6 +81,7 @@ fun MiTarjetaScreen(
                     lineHeight = 20.sp,
 
                     )
+
             )
 
         }
@@ -95,13 +95,8 @@ fun MiTarjetaScreen(
 
         MiTarjetaItemContainer()
 
-
+        }
     }
 
 }
 
-@Preview(showBackground = true)
-@Composable
-private fun MiTarjetaPrev() {
-
-}
