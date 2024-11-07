@@ -58,9 +58,3 @@ class SignInScreenViewModel : ViewModel() {
         }
     }
 }
-
-//    companion object {
-//        val viewModel: SignInScreenViewModel by lazy {
-//            SignInScreenViewModel()
-//        }
-//    }

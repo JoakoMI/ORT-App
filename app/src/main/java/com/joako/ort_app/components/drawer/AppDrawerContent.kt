@@ -18,6 +18,8 @@ import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -29,9 +31,11 @@ import androidx.compose.ui.unit.sp
 import com.joako.ort_app.R
 import com.joako.ort_app.components.SubmenuItem
 import com.joako.ort_app.navigation.MainNavActions
+import com.joako.ort_app.screens.inicio.InicioScreenViewModel
 
 @Composable
-fun MenuDrawerContent(navigationActions: MainNavActions) {
+fun MenuDrawerContent(navigationActions: MainNavActions, viewModel: InicioScreenViewModel) {
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -55,7 +59,7 @@ fun MenuDrawerContent(navigationActions: MainNavActions) {
             contentDescription = "Avatar",
 
             )
-        MiPerfilGreeting()
+        MiPerfilGreeting(viewModel = viewModel)
 
         Spacer(modifier = Modifier.height(40.dp))
 

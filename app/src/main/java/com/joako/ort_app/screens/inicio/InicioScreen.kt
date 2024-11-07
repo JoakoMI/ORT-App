@@ -31,8 +31,7 @@ fun InicioScreen(
             .fillMaxSize()
             .background(colorResource(id = R.color.screen_background)),
     ) {
-        InicioGreeting(modifier = modifier)
-
+        InicioGreeting(modifier = modifier, viewModel = viewModel)
 
         Column(
             verticalArrangement = Arrangement.Center,
@@ -44,19 +43,12 @@ fun InicioScreen(
 
             VisibilityOption()
 
-            InicioSaldoView()
+            InicioSaldoView(viewModel = viewModel)
 
             InicioAlert()
-
-
         }
         Spacer(modifier = Modifier.height(24.dp))
 
         InicioButtonRow(modifier = modifier, navigationActions = navigationActions)
-
-
-
     }
 }
-
-

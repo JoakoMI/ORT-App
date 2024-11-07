@@ -55,7 +55,8 @@ fun MainRouteNavGraph(
             SignInScreen(
                 navigationActions = navigationActions,
                 viewModel = signInViewModel,
-                navController = navController
+                navController = navController,
+                mainViewModel = viewModel
             )
         }
 
