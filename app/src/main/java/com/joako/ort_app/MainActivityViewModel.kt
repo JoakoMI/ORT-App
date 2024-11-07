@@ -1,5 +1,7 @@
 package com.joako.ort_app
 
+import androidx.compose.material3.DrawerState
+import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,16 +12,18 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.joako.ort_app.data.retrofit.RetroFitInstance
 import com.joako.ort_app.navigation.Routes
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
 class MainActivityViewModel : ViewModel() {
 
+
     val retrofitInstance: RetroFitInstance = RetroFitInstance
     private var _titleBar = MutableLiveData("Inicio")
     private var _route = mutableStateOf(Routes.SPLASH_SCREEN)
-    private val _drawerShouldBeOpened = MutableStateFlow(false)
-    val drawerShouldBeOpened = _drawerShouldBeOpened.asStateFlow()
 
+    private val _drawerShouldBeOpened = MutableStateFlow(false)
+    val drawerShouldBeOpened: StateFlow<Boolean> = _drawerShouldBeOpened
 
 
     fun setRoute(route: Routes) {

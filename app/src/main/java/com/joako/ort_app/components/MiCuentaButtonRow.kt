@@ -15,11 +15,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.joako.ort_app.R
+import com.joako.ort_app.navigation.MainNavActions
 
 @Composable
-fun ActionButtonsRow() {
+fun MiCuentaButtonRow(modifier: Modifier, navigationActions: MainNavActions) {
     Card(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.padding(horizontal = 12.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
         colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFFFF))
     ) {
