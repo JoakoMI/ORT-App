@@ -19,8 +19,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.joako.ort_app.R
@@ -30,7 +32,7 @@ fun MiTarjetaItemContainer(modifier: Modifier = Modifier) {
     Card(
         modifier
             .fillMaxWidth()
-            .background(Color.White),
+            .background(Color.Transparent),
         shape = RoundedCornerShape(16.dp),
         border = BorderStroke(1.dp, Color.LightGray),
         colors = CardDefaults.cardColors(containerColor = Color.White)
@@ -44,7 +46,8 @@ fun MiTarjetaItemContainer(modifier: Modifier = Modifier) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    "Quiero mi tarjeta física", style = TextStyle(
+                    text = stringResource(R.string.menu_item_quiero),
+                    style = TextStyle(
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold,
                         color = colorResource(id = R.color.black)
@@ -73,14 +76,14 @@ fun MiTarjetaItemContainer(modifier: Modifier = Modifier) {
             ) {
                 Column {
                     Text(
-                        "Ya tengo mi tarjeta física", style = TextStyle(
+                        text = stringResource(R.string.menu_item_tengo), style = TextStyle(
                             fontSize = 16.sp,
                             fontWeight = FontWeight.Bold,
                             color = colorResource(id = R.color.black)
                         )
                     )
                     Text(
-                        "Activa tu tarjeta para comenzar a usarla", style = TextStyle(
+                        text = stringResource(R.string.menu_item_activa), style = TextStyle(
                             fontSize = 14.sp, color = colorResource(id = R.color.black)
                         )
                     )
@@ -99,3 +102,9 @@ fun MiTarjetaItemContainer(modifier: Modifier = Modifier) {
     }
 }
 
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewMiTarjetaItemContainer() {
+    MiTarjetaItemContainer()
+}

@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -38,7 +39,7 @@ fun InicioAlert(modifier: Modifier = Modifier) {
                     style = TextStyle(
                         fontSize = 12.sp
                     ),
-                    text = "La cuota de tu préstamo está próxima a vencer.",
+                    text = stringResource(R.string.alert_message),
                     color = colorResource(id = R.color.white)
                 )
 
@@ -46,7 +47,7 @@ fun InicioAlert(modifier: Modifier = Modifier) {
                     style = TextStyle(
                         fontSize = 12.sp, fontWeight = FontWeight.Bold
                     ),
-                    text = "Ver préstamo",
+                    text = stringResource(R.string.alert_link),
                     color = colorResource(id = R.color.white)
                 )
             }

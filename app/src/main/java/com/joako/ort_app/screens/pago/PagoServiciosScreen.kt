@@ -2,6 +2,7 @@ package com.joako.ort_app.screens.pago
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -9,6 +10,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,23 +29,29 @@ fun PagoServiciosScreen(
     viewModel: PagoServiciosScreenViewModel
 ) {
     val options = viewModel.options
-
-    Column(
+    Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(colorResource(id = R.color.screen_background)),
-        verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally
+            .background(colorResource(id = R.color.screen_background))
+            .verticalScroll(rememberScrollState())
     ) {
-        Column (modifier.padding(12.dp)){
-            options.chunked(2).forEach { rowOptions ->
-                OptionCardRow(
-                    options = rowOptions,
-                    onOptionClick = { option ->
-                        viewModel.getNavigationAction(option.id, navigationActions).invoke()
-                    }
-                )
-                Spacer(modifier = Modifier.height(16.dp))
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(colorResource(id = R.color.screen_background)),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Column(modifier.padding(12.dp)) {
+                options.chunked(2).forEach { rowOptions ->
+                    OptionCardRow(
+                        options = rowOptions,
+                        onOptionClick = { option ->
+                            viewModel.getNavigationAction(option.id, navigationActions).invoke()
+                        }
+                    )
+                    Spacer(modifier = Modifier.height(16.dp))
+                }
             }
         }
     }

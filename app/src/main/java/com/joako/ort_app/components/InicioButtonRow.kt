@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.joako.ort_app.R
 import com.joako.ort_app.navigation.MainNavActions
@@ -36,8 +37,8 @@ fun InicioButtonRow(modifier: Modifier = Modifier, navigationActions: MainNavAct
             ActionButton(
                 modifier = Modifier.weight(1f),
                 iconResId = R.drawable.recarga_sube,
-                label1 = "RECARGA",
-                label2 = "SUBE",
+                label1 = stringResource(R.string.sube_1),
+                label2 = stringResource(R.string.sube_2),
                 onClick = {navigationActions.navigateToRecargaSube()}
             )
             VerticalDivider(
@@ -50,8 +51,8 @@ fun InicioButtonRow(modifier: Modifier = Modifier, navigationActions: MainNavAct
             ActionButton(
                 modifier = Modifier.weight(1f),
                 iconResId = R.drawable.recarga_celu,
-                label1 = "RECARGA",
-                label2 = "CALULAR",
+                label1 = stringResource(R.string.celular_1),
+                label2 = stringResource(R.string.celular_2),
                 onClick = {  }
             )
 
@@ -65,8 +66,8 @@ fun InicioButtonRow(modifier: Modifier = Modifier, navigationActions: MainNavAct
             ActionButton(
                 modifier = Modifier.weight(1f),
                 iconResId = R.drawable.pagoservicio,
-                label1 = "PAGAR",
-                label2 = "SERVICIO",
+                label1 = stringResource(R.string.servicio_1),
+                label2 = stringResource(R.string.servicio_2),
                 onClick = { }
             )
         }
@@ -85,8 +86,8 @@ fun InicioButtonRow(modifier: Modifier = Modifier, navigationActions: MainNavAct
             ActionButton(
                 modifier = Modifier.weight(1f),
                 iconResId = R.drawable.cargar_dinero,
-                label1 = "CARGAR",
-                label2 = "DINERO",
+                label1 = stringResource(R.string.cargar),
+                label2 = stringResource(R.string.dinero),
                 onClick = { }
             )
             VerticalDivider(
@@ -99,8 +100,8 @@ fun InicioButtonRow(modifier: Modifier = Modifier, navigationActions: MainNavAct
             ActionButton(
                 modifier = Modifier.weight(1f),
                 iconResId = R.drawable.extraer_dinero,
-                label1 = "EXTRAER",
-                label2 = "DINERO",
+                label1 = stringResource(R.string.extraer),
+                label2 = stringResource(R.string.dinero),
                 onClick = {  }
             )
 
@@ -114,8 +115,8 @@ fun InicioButtonRow(modifier: Modifier = Modifier, navigationActions: MainNavAct
             ActionButton(
                 modifier = Modifier.weight(1f),
                 iconResId = R.drawable.transferir_dinero,
-                label1 = "TRANSFERIR",
-                label2 = "DINERO",
+                label1 = stringResource(R.string.transferir),
+                label2 = stringResource(R.string.dinero),
                 onClick = {  }
             )
         }

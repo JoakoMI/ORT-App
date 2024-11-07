@@ -3,6 +3,7 @@ package com.joako.ort_app.screens.miTarjeta
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -10,7 +11,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Divider
@@ -22,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -39,64 +43,76 @@ fun MiTarjetaScreen(
     navigationActions: MainNavActions,
     viewModel: MiTarjetaScreenViewModel,
 ) {
-
-    Column(
-        modifier = modifier
+    Box(
+        modifier = Modifier
             .fillMaxSize()
-            .background(colorResource(id = R.color.screen_background)),
+            .background(colorResource(id = R.color.screen_background))
+            .verticalScroll(rememberScrollState())
     ) {
-        Row(modifier = modifier.padding(vertical = 24.dp, horizontal = 12.dp)) {
-            Column {
-                Text(
-                    style = TextStyle(
-                        fontSize = 12.sp, fontWeight = FontWeight.Bold
-                    ), text = "TARJETA VIRTUAL"
-                )
-            }
-        }
-
         Column(
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = modifier
+                .fillMaxSize()
+                .background(colorResource(id = R.color.screen_background)),
         ) {
-            CardMock()
+            Row(modifier = modifier.padding(vertical = 24.dp, horizontal = 12.dp)) {
+                Column {
+                    Text(
+                        style = TextStyle(
+                            fontSize = 12.sp, fontWeight = FontWeight.Bold
+                        ), text = stringResource(R.string.tarjeta_virtual)
+                    )
+                }
+            }
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Column(
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
 
-            VisibilityOption()
+                CardMock()
 
-            Divider(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 24.dp),
-                color = colorResource(id = R.color.gray_500)
-            )
+                Spacer(modifier = Modifier.weight(1f))
+                VisibilityOption()
 
-            Column (modifier.padding(12.dp)){
-            Text(
-                "\uD83D\uDCA1 ¿Sabías que poder pedir una tarjeta Mastercard física para utilizar directamente en los negocios que vos elijas?",
-                style = TextStyle(
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.W500,
-                    lineHeight = 20.sp,
+                Divider(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 24.dp),
+                    color = colorResource(id = R.color.gray_500)
+                )
+
+                Column(modifier.padding(12.dp)) {
+
+                    Text(
+
+                        text = stringResource(R.string.promo),
+                        style = TextStyle(
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.W500,
+                            lineHeight = 20.sp,
+
+                            )
 
                     )
 
-            )
 
-        }
-        Spacer(modifier = Modifier.height(16.dp))
-        Text(
-            style = TextStyle(
-                fontSize = 12.sp, fontWeight = FontWeight.Bold
-            ), text = "TARJETA FISICA"
-        )
-        Spacer(modifier = Modifier.height(16.dp))
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(
+                        style = TextStyle(
+                            fontSize = 12.sp, fontWeight = FontWeight.Bold
+                        ), text = stringResource(R.string.tarjeta_fisica)
+                    )
+                    Spacer(modifier = Modifier.height(16.dp))
 
-        MiTarjetaItemContainer()
+                    MiTarjetaItemContainer()
+                }
 
+
+
+                Spacer(modifier = Modifier.weight(1f))
+            }
         }
     }
-
 }
+
 

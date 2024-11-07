@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.joako.ort_app.R
 import com.joako.ort_app.components.SubmenuItem
@@ -32,7 +33,7 @@ fun DrawerItemContainer(modifier: Modifier = Modifier) {
         Column() {
             SubmenuItem(
                 modifier = Modifier,
-                text = "Mis datos"
+                text = stringResource(R.string.mis_datos)
             )
             Divider(
                 modifier = Modifier
@@ -42,7 +43,7 @@ fun DrawerItemContainer(modifier: Modifier = Modifier) {
             )
             SubmenuItem(
                 modifier = Modifier,
-                text = "Mi CVU"
+                text = stringResource(R.string.mi_cvu)
             )
             Divider(
                 modifier = Modifier
@@ -52,7 +53,7 @@ fun DrawerItemContainer(modifier: Modifier = Modifier) {
             )
             SubmenuItem(
                 modifier = Modifier,
-                text = "Configuración"
+                text = stringResource(R.string.config)
             )
             Divider(
                 modifier = Modifier
@@ -62,7 +63,7 @@ fun DrawerItemContainer(modifier: Modifier = Modifier) {
             )
             SubmenuItem(
                 modifier = Modifier,
-                text = "Ayuda"
+                text = stringResource(R.string.help)
             )
             Divider(
                 modifier = Modifier
@@ -72,7 +73,7 @@ fun DrawerItemContainer(modifier: Modifier = Modifier) {
             )
             SubmenuItem(
                 modifier = Modifier,
-                text = "Términos y condiciones"
+                text = stringResource(R.string.terms)
             )
             Divider(
                 modifier = Modifier
@@ -82,7 +83,7 @@ fun DrawerItemContainer(modifier: Modifier = Modifier) {
             )
             SubmenuItem(
                 modifier = Modifier,
-                text = "Cerrar sesión"
+                text = stringResource(R.string.close)
             )
             Divider(
                 modifier = Modifier

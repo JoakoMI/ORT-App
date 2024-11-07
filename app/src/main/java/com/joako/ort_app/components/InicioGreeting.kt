@@ -8,10 +8,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.joako.ort_app.R
 import com.joako.ort_app.screens.inicio.InicioScreenViewModel
 
 fun String.capitalizeFirstLetter(): String {
@@ -27,12 +29,12 @@ fun InicioGreeting(modifier: Modifier = Modifier, viewModel: InicioScreenViewMod
             Text(
                 style = TextStyle(
                     fontSize = 18.sp, fontWeight = FontWeight.Bold
-                ), text = "\uD83D\uDC4B Hola ${userName.capitalizeFirstLetter()}"
+                ), text = stringResource(R.string.greeting) + " " + userName.capitalizeFirstLetter()
             )
             Text(
                 style = TextStyle(
                     fontSize = 12.sp,
-                ), text = "Ultimo acceso: Mar 01, 2020 4:55 PM"
+                ), text = stringResource(R.string.accsess)
             )
         }
     }

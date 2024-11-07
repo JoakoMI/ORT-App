@@ -33,7 +33,6 @@ fun MovimientoItem(transaction: Transaction) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp),
-//        horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Column (Modifier.weight(1f)){
             Text(text = "$formattedDate   ", fontSize = 14.sp, color = Color(0xFF2A1846))

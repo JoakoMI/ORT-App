@@ -12,9 +12,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.joako.ort_app.R
 import com.joako.ort_app.data.firestore.Transaction
 
 @Composable
@@ -27,7 +29,7 @@ fun MiCuentaMovimientos(modifier: Modifier = Modifier, transactions: List<Transa
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
-            text = "MOVIMIENTOS",
+            text = stringResource(R.string.movimientos),
             color = Color.White,
             fontSize = 16.sp,
             fontWeight = FontWeight.Bold,
