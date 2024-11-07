@@ -50,7 +50,6 @@ class InicioScreenViewModel(private val retrofitInstance: RetroFitInstance) : Vi
 
     init {
         fetchUserName()
-        fetchWallet()
     }
 
     private fun fetchUserName() {

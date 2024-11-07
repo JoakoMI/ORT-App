@@ -38,7 +38,7 @@ fun SignInScreen(
     viewModel: SignInScreenViewModel,
     navigationActions: MainNavActions,
     navController: NavHostController,
-    mainViewModel: MainActivityViewModel // Añadir el MainActivityViewModel aquí
+    mainViewModel: MainActivityViewModel
 ) {
     val context = LocalContext.current
     val signInResult = viewModel.signInResult
