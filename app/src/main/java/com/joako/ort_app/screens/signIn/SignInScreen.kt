@@ -26,6 +26,7 @@ import com.joako.ort_app.data.retrofit.NetworkResponse
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.navigation.NavHostController
+import com.joako.ort_app.MainActivityViewModel
 import com.joako.ort_app.navigation.MainNavActions
 import com.joako.ort_app.navigation.Routes
 
@@ -36,7 +37,8 @@ val goldmanSans = FontFamily(Font(R.font.goldman_sans))
 fun SignInScreen(
     viewModel: SignInScreenViewModel,
     navigationActions: MainNavActions,
-    navController: NavHostController
+    navController: NavHostController,
+    mainViewModel: MainActivityViewModel // Añadir el MainActivityViewModel aquí
 ) {
     val context = LocalContext.current
     val signInResult = viewModel.signInResult
@@ -223,6 +225,7 @@ fun SignInScreen(
                     when (result) {
                         is NetworkResponse.Success -> {
                             viewModel.clearSignInResult()
+                            mainViewModel.setRoute(Routes.INICIO_SCREEN) // Llamar a setRoute aquí
                             navController.navigate(Routes.INICIO_SCREEN) {
                                 popUpTo(Routes.SIGNIN_SCREEN) { inclusive = true }
                             }

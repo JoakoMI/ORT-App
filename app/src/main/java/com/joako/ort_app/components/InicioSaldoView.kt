@@ -4,15 +4,20 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.joako.ort_app.screens.inicio.InicioScreenViewModel
 
 @Composable
-fun InicioSaldoView(modifier: Modifier = Modifier) {
+fun InicioSaldoView(modifier: Modifier = Modifier, viewModel: InicioScreenViewModel) {
+    val saldoDisponible by viewModel.saldoDisponible.observeAsState("N/A")
+
     Column(
         modifier = Modifier.padding(vertical = 24.dp),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -23,10 +28,9 @@ fun InicioSaldoView(modifier: Modifier = Modifier) {
             ), text = "SALDO DISPONIBLE"
         )
         Text(
-
             style = TextStyle(
                 fontWeight = FontWeight.Black, fontSize = 44.sp
-            ), text = "$ 1.322,78"
+            ), text = saldoDisponible
         )
     }
 }
