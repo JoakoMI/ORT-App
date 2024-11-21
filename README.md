@@ -1,5 +1,5 @@
 #  Digital Wallet Demo - ORT App 
-## Este proyecto es una demo de una billetera digital fintech desarrollada como proyecto final de la materia Taller de Programación 3, dictada por Martín Rivas, en el último cuatrimestre de la Tecnicatura en Analista de Sistemas en ORT.
+### Este proyecto es una demo de billetera digital fintech desarrollada como proyecto final de la materia Taller de Programación 3, dictada por Martín Rivas, en el último cuatrimestre de la Tecnicatura en Analista de Sistemas en ORT.
 
 ### 🖌️ Diseño
 El diseño de la aplicación está basado en el siguiente prototipo de Figma:
@@ -7,30 +7,28 @@ El diseño de la aplicación está basado en el siguiente prototipo de Figma:
 
 
 ### 📱 Características y Tecnologías utilizadas
-**Arquitectura MVVM**
-**Jetpack Compose**, para construir UI siguiendo buenas prácticas de diseño.
-**Firebase** como backend mock para la recuperación de información.
-**Retrofit**, conectando con fakestoreapi.com para el login y la autenticación simulada.
+**Arquitectura MVVM**  
+**Jetpack Compose**, para construir UI siguiendo buenas prácticas de diseño.  
+**Firebase** como backend mock para la recuperación de información.  
+**Retrofit**, conectando con fakestoreapi.com para el login y la autenticación simulada.  
 
 ### 🧪 Credenciales para Testeo
-Para acceder, utiliza las siguientes credenciales de prueba:
-Usuario: mor_2314
-Contraseña: 83r5^_
-Estas credenciales funcionan con la API de fakestoreapi.com, que proporciona datos de prueba preconfigurados.
+Para acceder, utiliza las siguientes credenciales de prueba:  
+Usuario: mor_2314  
+Contraseña: 83r5^_  
+Estas credenciales funcionan con la API de fakestoreapi.com, que proporciona datos de prueba preconfigurados.  
 
-### 🛠️ Configuración del proyecto
-Clona este repositorio:
-bash
-Copiar código
-git clone https://github.com/JoakoMI/ORT-App.git
-Abre el proyecto en Android Studio.
-Asegúrate de tener configurado Firebase en tu entorno, siguiendo las instrucciones proporcionadas en el sitio oficial.
-Ejecuta el proyecto en un emulador o dispositivo físico.
+### 🛠️ Configuración del proyecto  
+Clona este repositorio:  
+git clone https://github.com/JoakoMI/ORT-App.git  
+Abre el proyecto en Android Studio.  
+Asegúrate de tener configurado Firebase en tu entorno, siguiendo las instrucciones proporcionadas en el sitio oficial.  
+Ejecuta el proyecto en un emulador o dispositivo físico.  
 
 ### 📂 Estructura del proyecto
-data/: Contiene los modelos de datos y la integración con Retrofit y Firebase.
-screens/: Componentes de la interfaz construidos con Jetpack Compose por cada pantalla y sus viewmodels.
-navigation/: Lógica de navegación.
+data/: Contiene los modelos de datos y la integración con Retrofit y Firebase.  
+screens/: Componentes de la interfaz construidos con Jetpack Compose por cada pantalla y sus viewmodels.  
+navigation/: Lógica de navegación.  
 
 ### 👥 Integrantes del Proyecto
 Este proyecto fue desarrollado por los siguientes integrantes:
