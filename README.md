@@ -2,8 +2,7 @@
 ### Este repositorio es una demo de billetera digital fintech desarrollada como proyecto final de la materia Taller de Programación 3, dictada por Martín Rivas, en el último cuatrimestre de la Tecnicatura en Analista de Sistemas en ORT.
 
 ### 🖌️ Diseño
-El diseño de la aplicación está basado en el siguiente prototipo de Figma:
-[Diseño en Figma](https://www.figma.com/design/mrBVgAVorDpdiLHgOwbLdX/Parcial-2024-Q2-(A)?node-id=362-0&t=h35RmK4F42vqhQ2Y-1)
+El diseño de la aplicación está basado en el siguiente prototipo de [Figma](https://www.figma.com/design/mrBVgAVorDpdiLHgOwbLdX/Parcial-2024-Q2-(A)?node-id=362-0&t=h35RmK4F42vqhQ2Y-1)
 
 
 ### 📱 Características y Tecnologías utilizadas
