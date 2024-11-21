@@ -1,5 +1,5 @@
 #  Digital Wallet Demo - ORT App 
-### Este proyecto es una demo de billetera digital fintech desarrollada como proyecto final de la materia Taller de Programación 3, dictada por Martín Rivas, en el último cuatrimestre de la Tecnicatura en Analista de Sistemas en ORT.
+### Este repositorio es una demo de billetera digital fintech desarrollada como proyecto final de la materia Taller de Programación 3, dictada por Martín Rivas, en el último cuatrimestre de la Tecnicatura en Analista de Sistemas en ORT.
 
 ### 🖌️ Diseño
 El diseño de la aplicación está basado en el siguiente prototipo de Figma:
